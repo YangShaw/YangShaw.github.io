@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on My New Hugo Site</title>
+    <link>https://YangShaw.github.io/post/</link>
+    <description>Recent content in Posts on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 27 Feb 2020 17:33:43 +0800</lastBuildDate>
+    
+	<atom:link href="https://YangShaw.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>First</title>
+      <link>https://YangShaw.github.io/post/first/</link>
+      <pubDate>Thu, 27 Feb 2020 17:33:43 +0800</pubDate>
+      
+      <guid>https://YangShaw.github.io/post/first/</guid>
+      <description>第一篇文章
+空将汉月出宫门 忆君清泪如铅水
+衰兰送客咸阳道 天若有情天亦老</description>
+    </item>
+    
+  </channel>
+</rss>
