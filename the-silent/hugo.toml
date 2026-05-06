@@ -1,0 +1,4 @@
+baseURL = 'https://yangshaw.github.io/'
+locale = 'en-us'
+title = 'The Silent'
+theme = 'PaperMod'
