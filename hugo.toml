@@ -8,7 +8,7 @@ enableRobotsTXT = true
 disqusShortname = 'your-disqus-shortname'
 
 [params]
-description = '记录技术学习、项目复盘、阅读与生活思考。'
+description = ''
 env = 'production'
 useChineseFonts = true
 fuse = true
@@ -26,11 +26,11 @@ postDateFormat = '2006-01-02'
     url = '/posts/'
     weight = 1
 
-  [[menu.main]]
-    identifier = 'tags'
-    name = 'Tags'
-    url = '/tags/'
-    weight = 2
+  # [[menu.main]]
+  #   identifier = 'tags'
+  #   name = 'Tags'
+  #   url = '/tags/'
+  #   weight = 2
 
   [[menu.main]]
     identifier = 'categories'
