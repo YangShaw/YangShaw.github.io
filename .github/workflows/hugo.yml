@@ -34,12 +34,12 @@ jobs:
           sudo dpkg -i ${{ runner.temp }}/hugo.deb
 
       - name: Build
-        run: hugo --minify --source the-silent
+        run: hugo --minify
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./the-silent/public
+          path: ./public
 
   deploy:
     environment:
