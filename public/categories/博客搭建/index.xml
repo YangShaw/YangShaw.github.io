@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>博客搭建 on The Silent</title>
+    <link>http://localhost:1313/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</link>
+    <description>Recent content in 博客搭建 on The Silent</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 06 May 2026 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>First Post</title>
+      <link>http://localhost:1313/posts/first-post/</link>
+      <pubDate>Wed, 06 May 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/first-post/</guid>
+      <description>&lt;h1 id=&#34;为什么选择-hugo&#34;&gt;为什么选择 Hugo？&lt;/h1&gt;
+&lt;p&gt;最近决定认真搭建一个属于自己的个人博客，用来记录：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;技术学习（Doris / Flink / AI / 架构）&lt;/li&gt;
+&lt;li&gt;电影、音乐、阅读&lt;/li&gt;
+&lt;li&gt;项目复盘&lt;/li&gt;
+&lt;li&gt;长期知识沉淀&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在 Jekyll、Hexo、Hugo 之间做了一轮选择后，我最终选择了 &lt;strong&gt;Hugo&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;我选择-hugo-的原因&#34;&gt;我选择 Hugo 的原因&lt;/h2&gt;
+&lt;h3 id=&#34;1-构建速度极快&#34;&gt;1. 构建速度极快&lt;/h3&gt;
+&lt;p&gt;Hugo 是 Go 编写的静态网站生成器，即使文章很多，生成速度依然非常快。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
