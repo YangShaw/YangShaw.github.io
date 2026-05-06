@@ -1,10 +1,12 @@
 +++
-date = '2026-05-06T14:49:07+08:00'
-draft = false
+date = '2026-05-06'
+draft = true
 title = 'First Post'
+description = '关于我为什么选择 Hugo 搭建个人博客，以及博客内容规划。'
 author = "YangShaw"
 comments = true
-tags = ["Blog"]
+tags = ["Blog", "Hugo"]
+categories = ["博客搭建"]
 ShowToc = true
 TocOpen = true
 +++
