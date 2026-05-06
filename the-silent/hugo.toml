@@ -1,5 +1,16 @@
 baseURL = 'https://yangshaw.github.io/'
 locale = 'en-us'
 title = 'The Silent'
+author = 'Yang Shaw'
 # theme = 'PaperMod'
 theme = 'hugo-theme-tokiwa'
+hasCJKLanguage = true
+
+[params]
+useChineseFonts = true
+fuse = true
+postDateFormat = "2026-01-01"
+
+[module]
+[[module.imports]]
+  path = "github.com/heyeshuang/hugo-theme-tokiwa"
