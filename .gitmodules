@@ -1,3 +1,6 @@
 [submodule "the-silent/themes/PaperMod"]
 	path = the-silent/themes/PaperMod
 	url = https://github.com/adityatelange/hugo-PaperMod
+[submodule "the-silent/themes/hugo-theme-tokiwa"]
+	path = the-silent/themes/hugo-theme-tokiwa
+	url = https://github.com/heyeshuang/hugo-theme-tokiwa.git
