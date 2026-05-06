@@ -54,5 +54,6 @@ TocOpen = true
 
 ## 宗教
 
-[十二因缘 - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/%E5%8D%81%E4%BA%8C%E5%9B%A0%E7%BC%98)
-[莎乐美 (歌剧) - 维基百科，自由的百科全书](https://zh.wikipedia.org/zh-cn/%E8%8E%8E%E6%A8%82%E7%BE%8E_(%E6%AD%8C%E5%8A%87))
+- [十二因缘 - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/%E5%8D%81%E4%BA%8C%E5%9B%A0%E7%BC%98)
+
+- [莎乐美 (歌剧) - 维基百科，自由的百科全书](https://zh.wikipedia.org/zh-cn/%E8%8E%8E%E6%A8%82%E7%BE%8E_(%E6%AD%8C%E5%8A%87))
