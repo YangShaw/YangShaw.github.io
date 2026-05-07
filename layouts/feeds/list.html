@@ -15,16 +15,20 @@
         <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02 15:04" }}</time>
       </div>
 
+      {{/* Feed titles are intentionally kept in front matter but never rendered on the page.
       {{ if .Title }}
       <h3 class="feed-card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
       {{ end }}
+      */}}
 
       <div class="feed-card-body">
         {{ if eq $listMode "summary" }}
           {{ .Summary }}
+          {{/* Detail links are intentionally hidden for feeds.
           {{ if .Truncated }}
           <p class="feed-card-readmore"><a href="{{ .RelPermalink }}">Read more →</a></p>
           {{ end }}
+          */}}
         {{ else }}
           {{ .Content }}
         {{ end }}
@@ -38,9 +42,11 @@
       </div>
       {{ end }}
 
+      {{/* Detail links are intentionally hidden for feeds.
       <div class="feed-card-permalink">
         <a href="{{ .RelPermalink }}">Permalink</a>
       </div>
+      */}}
     </article>
     {{ end }}
   </section>

@@ -2,7 +2,9 @@
 <div>
   <h2><a href="{{ .Site.BaseURL }}" title="{{ .Site.Title }}" class="heading font-cursive icon">{{ .Site.Title }}</a></h2>
 </div>
+{{/* Feed titles are intentionally kept in front matter but never rendered on the page.
 <h1 class="pt-2">{{ if .Title }}{{ .Title }}{{ else }}Feed{{ end }}</h1>
+*/}}
 <div class="text-sm text-gray-500">{{ .Date.Format "2006-01-02 15:04" }}</div>
 <hr>
 {{ end }}

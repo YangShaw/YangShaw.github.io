@@ -14,6 +14,8 @@ useChineseFonts = true
 fuse = true
 mainSections = ['posts']
 postDateFormat = '2006-01-02'
+asideImage = '/img/hornet-bg.png'
+asideImagePosition = 'aside' # aside | page-lower-left
 
 [params.feeds]
   listMode = 'full'   # full | summary

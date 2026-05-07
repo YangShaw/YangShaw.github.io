@@ -125,7 +125,9 @@
 	{{ end }}
 </head>
 
-<body class="bg-gray-100 text-gray-700 font-sans">
+{{ $asideImage := .Site.Params.asideImage }}
+{{ $asideImagePosition := .Site.Params.asideImagePosition | default "aside" }}
+<body class="bg-gray-100 text-gray-700 font-sans" data-aside-image-position="{{ $asideImagePosition }}">
 	<div class="p-6 sm:p-10 md:p-16 flex flex-wrap">
 		<header class="w-full md:w-2/5 xl:w-1/2 md:pr-12 lg:pr-20 xl:pr-24 order-1 md:order-1 max-w-2xl">
 			<div
@@ -147,6 +149,11 @@
 			{{ block "footer" . }}
 			{{ end }}
 		</footer>
+		<div class="site-page-lower-left-image-slot site-decor-image-slot" aria-hidden="true">
+			{{ if and $asideImage (eq $asideImagePosition "page-lower-left") }}
+			<img src="{{ $asideImage | relURL }}" alt="">
+			{{ end }}
+		</div>
 		{{ block "scripts" . }}{{ partial "site-scripts.html" . }}{{ end }}
 	</div>
 </body>

@@ -1,0 +1,22 @@
+{{ $scratch := newScratch }}
+{{ range (.Site.Pages) }}
+{{ $scratch.Add "total" .WordCount }}
+{{ end }}
+{{ $asideImage := .Site.Params.asideImage }}
+{{ $asideImagePosition := .Site.Params.asideImagePosition | default "aside" }}
+<div class="md:max-w-xs flex flex-col md:items-end pt-2 site-aside">
+	<div class="site-aside-image-slot site-decor-image-slot" aria-hidden="true">
+		{{ if and $asideImage (eq $asideImagePosition "aside") }}
+		<img src="{{ $asideImage | relURL }}" alt="">
+		{{ end }}
+	</div>
+	{{ partial "social-follow.html" . }}
+	<div class="a-gray text-sm text-gray-500 leading-tight">
+		{{ .Site.Copyright | safeHTML }}
+		<br />
+		Built with Hugo and theme <a
+			href="https://github.com/heyeshuang/hugo-theme-tokiwa">Tokiwa</a>.
+			<br />
+			{{ len .Site.Pages }} pages, {{ $scratch.Get "total" }} words in total.
+	</div>
+</div>
