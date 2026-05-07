@@ -15,6 +15,10 @@ fuse = true
 mainSections = ['posts']
 postDateFormat = '2006-01-02'
 
+[params.feeds]
+  listMode = 'full'   # full | summary
+  pageSize = 20
+
 [params.social]
   github = 'https://github.com/YangShaw'
   mail = 'mailto:youngshawww@gmail.com'
@@ -33,22 +37,28 @@ postDateFormat = '2006-01-02'
   #   weight = 2
 
   [[menu.main]]
+    identifier = 'feeds'
+    name = 'Feeds'
+    url = '/feeds/'
+    weight = 2
+
+  [[menu.main]]
     identifier = 'notes'
     name = 'Notes'
     url = '/notes/'
-    weight = 2
+    weight = 3
 
   [[menu.main]]
     identifier = 'categories'
     name = 'Categories'
     url = '/categories/'
-    weight = 3
+    weight = 4
 
   [[menu.main]]
     identifier = 'about'
     name = 'About'
     url = '/about/'
-    weight = 4
+    weight = 5
 
 [taxonomies]
   tag = 'tags'

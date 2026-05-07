@@ -1,0 +1,26 @@
+{{ define "header" }}
+<div>
+  <h2><a href="{{ .Site.BaseURL }}" title="{{ .Site.Title }}" class="heading font-cursive icon">{{ .Site.Title }}</a></h2>
+</div>
+<h1 class="pt-2">{{ if .Title }}{{ .Title }}{{ else }}Feed{{ end }}</h1>
+<div class="text-sm text-gray-500">{{ .Date.Format "2006-01-02 15:04" }}</div>
+<hr>
+{{ end }}
+
+{{ define "main" }}
+<article>
+  <section class="mx-auto content">
+    <div class="c-rich-text">
+      {{ .Content }}
+    </div>
+  </section>
+  <p class="feed-back-link"><a href="/feeds/">← Back to Feeds</a></p>
+</article>
+{{ end }}
+
+{{ define "aside" }}
+{{ partial "page-aside.html" . }}
+{{ end }}
+
+{{ define "footer" }}
+{{ end }}

@@ -6,3 +6,74 @@ body.home-bg {
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
+
+/* feeds 卡片流 */
+.feed-intro {
+  margin-bottom: 1rem;
+}
+
+.feed-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.feed-card {
+  background: #ffffffcc;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1rem 1rem 0.8rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.feed-card-meta {
+  font-size: 0.82rem;
+  color: #6b7280;
+  margin-bottom: 0.4rem;
+}
+
+.feed-card-title {
+  margin: 0.2rem 0 0.65rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.feed-card-body p {
+  margin: 0.35rem 0;
+}
+
+.feed-card-tags {
+  margin-top: 0.8rem;
+}
+
+.feed-card-tags a {
+  font-size: 0.82rem;
+  color: #0f766e;
+  margin-right: 0.5rem;
+}
+
+.feed-card-permalink {
+  margin-top: 0.6rem;
+  font-size: 0.8rem;
+}
+
+.feed-card-permalink a {
+  color: #6b7280;
+}
+
+.feed-card-readmore a {
+  color: #0f766e;
+  font-size: 0.88rem;
+}
+
+.feed-card-title a {
+  color: inherit;
+}
+
+.feed-back-link {
+  margin-top: 1.2rem;
+}
+
+.feed-back-link a {
+  color: #0f766e;
+}
