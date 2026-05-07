@@ -28,6 +28,8 @@
 	<link rel="stylesheet" href="{{ relURL ($.Site.BaseURL) }}{{ . }}">
 	{{ end }}
 
+	<link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
+
 	{{ block "favicon" . }}
 	{{ partial "site-favicon.html" . }}
 	{{ end }}
