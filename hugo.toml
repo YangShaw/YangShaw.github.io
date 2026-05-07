@@ -33,6 +33,12 @@ postDateFormat = '2006-01-02'
   #   weight = 2
 
   [[menu.main]]
+    identifier = 'notes'
+    name = 'Notes'
+    url = '/notes/'
+    weight = 2
+
+  [[menu.main]]
     identifier = 'categories'
     name = 'Categories'
     url = '/categories/'
