@@ -2,12 +2,9 @@
 date = '{{ .Date }}'
 draft = false
 title = '{{ replace .File.ContentBaseName "-" " " | title }}'
-description = '一句话摘要（用于 SEO / OpenGraph）。'
+description = ''
 author = 'YangShaw'
 tags = ['feed']
+# Add 'home' to categories when this feed should replace the homepage text.
 categories = ['feeds']
 +++
-
-这里写正文内容（这是展示在 feeds 卡片里的主体）。
-
-可选：用 `<!--more-->` 控制摘要。

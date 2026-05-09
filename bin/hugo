@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+set -eu
+
+repo_dir="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
+
+if [ "${1:-}" = "new-home" ]; then
+  shift
+  exec "$repo_dir/scripts/new-home.sh" "$@"
+fi
+
+if [ -n "${HUGO_BIN:-}" ]; then
+  exec "$HUGO_BIN" "$@"
+fi
+
+for candidate in /opt/homebrew/bin/hugo /usr/local/bin/hugo /usr/bin/hugo; do
+  if [ -x "$candidate" ] && [ "$candidate" != "$repo_dir/bin/hugo" ]; then
+    exec "$candidate" "$@"
+  fi
+done
+
+echo "Unable to find the system hugo binary. Set HUGO_BIN=/path/to/hugo." >&2
+exit 127

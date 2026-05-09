@@ -1,13 +1,19 @@
 {{ define "main" }}
 {{ $listMode := .Site.Params.feeds.listMode | default "full" }}
 {{ $pageSize := .Site.Params.feeds.pageSize | default 20 }}
+{{ $feedPages := slice }}
+{{ range .Pages.ByDate.Reverse }}
+{{ if not (in (.Params.categories | default (slice)) "home") }}
+{{ $feedPages = $feedPages | append . }}
+{{ end }}
+{{ end }}
 
 <article>
   <section class="feed-intro">
     {{ .Content }}
   </section>
 
-  {{ $paginator := .Paginate (.Pages.ByDate.Reverse) $pageSize }}
+  {{ $paginator := .Paginate $feedPages $pageSize }}
   <section class="feed-cards">
     {{ range $paginator.Pages }}
     <article class="feed-card">

@@ -1,0 +1,32 @@
+{{ define "main" }}
+{{ $page := . }}
+{{ $homeFeeds := slice }}
+{{ range where site.RegularPages "Type" "feeds" }}
+{{ if in (.Params.categories | default (slice)) "home" }}
+{{ $homeFeeds = $homeFeeds | append . }}
+{{ end }}
+{{ end }}
+<article class="home-landing">
+	<section class="c-rich-text home-landing-copy">
+		{{ with first 1 (sort $homeFeeds "Date" "desc") }}
+		{{ range . }}
+		{{ .Content }}
+		{{ end }}
+		{{ else }}
+		{{ $page.Content }}
+		{{ end }}
+	</section>
+
+	<!-- <nav class="home-landing-links" aria-label="Home sections">
+		{{ range .Site.Menus.main }}
+		{{ if ne .Identifier "home" }}
+		<a class="home-landing-link" href="{{ .URL }}">{{ .Name }}</a>
+		{{ end }}
+		{{ end }}
+	</nav> -->
+</article>
+{{ end }}
+
+{{ define "footer" }}
+{{ partial "list-footer.html" . }}
+{{ end }}
