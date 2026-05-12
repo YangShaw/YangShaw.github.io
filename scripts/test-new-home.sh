@@ -24,6 +24,11 @@ if ! grep -q "categories = \\['home'\\]" "$target"; then
   exit 1
 fi
 
+if grep -q '^tags =' "$target"; then
+  echo "new-home should not write tags"
+  exit 1
+fi
+
 if ! grep -q "这是一段直接从命令写入首页的文字。" "$target"; then
   echo "new-home should write command text into the feed body"
   exit 1

@@ -1,0 +1,24 @@
+{{ $social := .Site.Params.Social }}
+{{ $count := add (len $social) 1 }}
+<div class="flex flex-wrap-reverse md:justify-end content-end md:content-start justify-start items-start {{ if gt $count 4 }}md:flex-col{{ end }} max-h-16">
+	{{ with $social }}
+	{{ range $key, $value := . }}
+	{{ if not (eq $key "_merge") }}
+	<a href='{{ $value }}' target="_blank" class="{{- $key }} icon pl-1 text-eucalyptus-400 hover:text-java-400" title="{{- $key }} link" rel="noopener"
+		aria-label="follow on {{ $key }}——Opens in a new window">
+		<div class="fill-current h-8 w-8">
+			{{ partial (printf "%s%s%s" "svg/" $key "-line.svg") . }}
+		</div>
+	</a>
+	{{ end }}
+	{{ end }}
+	{{ end }}
+	<a href="{{ "/index.xml" | relURL }}" class="rss icon pl-1 text-eucalyptus-400 hover:text-java-400" title="rss feed" aria-label="subscribe to RSS feed">
+		<div class="fill-current h-8 w-8">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+				<path fill="none" d="M0 0h24v24H0z"/>
+				<path d="M6.18 17.82a2.18 2.18 0 1 1-4.36 0 2.18 2.18 0 0 1 4.36 0zM2 9.82v3.13a9.05 9.05 0 0 1 9.05 9.05h3.13A12.18 12.18 0 0 0 2 9.82zm0-5.64v3.13A14.69 14.69 0 0 1 16.69 22h3.13A17.82 17.82 0 0 0 2 4.18z"/>
+			</svg>
+		</div>
+	</a>
+</div>

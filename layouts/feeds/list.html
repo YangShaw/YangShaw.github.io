@@ -15,45 +15,42 @@
 
   {{ $paginator := .Paginate $feedPages $pageSize }}
   <section class="feed-cards">
-    {{ range $paginator.Pages }}
-    <article class="feed-card">
-      <div class="feed-card-meta">
-        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02 15:04" }}</time>
-      </div>
+    {{ range $paginator.Pages.GroupByDate "2006" }}
+    <section class="feed-year-group">
+      <h2 class="feed-year-heading">{{ .Key }}</h2>
+      {{ range .Pages }}
+      <article class="feed-card">
+        <div class="feed-card-meta">
+          <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02 15:04" }}</time>
+        </div>
 
-      {{/* Feed titles are intentionally kept in front matter but never rendered on the page.
-      {{ if .Title }}
-      <h3 class="feed-card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-      {{ end }}
-      */}}
+        {{/* Feed titles are intentionally kept in front matter but never rendered on the page.
+        {{ if .Title }}
+        <h3 class="feed-card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{ end }}
+        */}}
 
-      <div class="feed-card-body">
-        {{ if eq $listMode "summary" }}
-          {{ .Summary }}
-          {{/* Detail links are intentionally hidden for feeds.
-          {{ if .Truncated }}
-          <p class="feed-card-readmore"><a href="{{ .RelPermalink }}">Read more →</a></p>
+        <div class="feed-card-body">
+          {{ if eq $listMode "summary" }}
+            {{ .Summary }}
+            {{/* Detail links are intentionally hidden for feeds.
+            {{ if .Truncated }}
+            <p class="feed-card-readmore"><a href="{{ .RelPermalink }}">Read more →</a></p>
+            {{ end }}
+            */}}
+          {{ else }}
+            {{ .Content }}
           {{ end }}
-          */}}
-        {{ else }}
-          {{ .Content }}
-        {{ end }}
-      </div>
+        </div>
 
-      {{ with .Params.tags }}
-      <div class="feed-card-tags">
-        {{ range . }}
-        <a href="{{ "/tags/" | relURL }}{{ . | urlize }}">#{{ . }}</a>
-        {{ end }}
-      </div>
+        {{/* Detail links are intentionally hidden for feeds.
+        <div class="feed-card-permalink">
+          <a href="{{ .RelPermalink }}">Permalink</a>
+        </div>
+        */}}
+      </article>
       {{ end }}
-
-      {{/* Detail links are intentionally hidden for feeds.
-      <div class="feed-card-permalink">
-        <a href="{{ .RelPermalink }}">Permalink</a>
-      </div>
-      */}}
-    </article>
+    </section>
     {{ end }}
   </section>
 </article>

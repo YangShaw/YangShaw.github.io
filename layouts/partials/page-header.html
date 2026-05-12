@@ -1,0 +1,41 @@
+<div>
+	<h2>
+		<a href="{{ .Site.BaseURL }}" title="{{ .Site.Title }}" class="heading font-cursive icon">{{ .Site.Title }}</a>
+	</h2>
+</div>
+<h1 class="pt-2">
+	{{- .Title -}}
+</h1>
+{{ with .Description }}
+<h3 class="text-java-700 font-normal leading-relaxed pt-2">{{ . }}</h3>
+{{ end }}
+<div class="flex flex-wrap justify-end pt-2">
+	{{- partial "tags.html" . -}}
+	<div class="post-page-meta text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4">
+		<span class="post-meta-item">
+			<svg class="post-meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+				<path fill="none" d="M0 0h24v24H0z"/>
+				<path d="M7 2h2v2h6V2h2v2h4v18H3V4h4V2zm12 8H5v10h14V10zm0-2V6h-2v2h-2V6H9v2H7V6H5v2h14z"/>
+			</svg>
+			<time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+				{{- .Date.Format (.Site.Params.PostDateFormat | default "2006-1-2 15:04") -}}
+			</time>
+		</span>
+		<span class="post-meta-item">
+			<svg class="post-meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+				<path fill="none" d="M0 0h24v24H0z"/>
+				<path d="M5 4h14v2H5V4zm0 4h14v2H5V8zm0 4h10v2H5v-2zm0 4h14v2H5v-2z"/>
+			</svg>
+			<span>{{ .WordCount }} </span>
+		</span>
+		<span class="post-meta-item">
+			<svg class="post-meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+				<path fill="none" d="M0 0h24v24H0z"/>
+				<path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-8h4v2h-6V7h2v5z"/>
+			</svg>
+			<span>{{ .ReadingTime }} min</span>
+		</span>
+	</div>
+</div>
+{{ partial "toc.html" . }}
+<hr />

@@ -13,7 +13,6 @@ printf "%s\n" \
 "draft = false" \
 "title = 'Homepage Feed Test'" \
 "description = 'should replace home text'" \
-"tags = ['home']" \
 "categories = ['home']" \
 "+++" \
 "" \

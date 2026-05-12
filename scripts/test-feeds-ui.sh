@@ -22,6 +22,11 @@ if grep -Eq 'feed-card-readmore|feed-card-permalink|Read more|Permalink' "$feeds
   exit 1
 fi
 
+if grep -Eq 'feed-card-tags|post-taxonomy-tag|/tags/' "$feeds_index"; then
+  echo "feeds list should not render tags"
+  exit 1
+fi
+
 if ! grep -q 'site-aside-image-slot' "$feeds_index"; then
   echo "site aside should include the lower-left image slot"
   exit 1
@@ -39,6 +44,23 @@ fi
 
 if ! sed -n '/site-aside-image-slot/,/<\/div>/p' "$feeds_index" | grep -q '<img src="/img/hornet-bg.png"'; then
   echo "default aside position should render the image in the aside slot"
+  exit 1
+fi
+
+if ! grep -q 'class="feed-year-heading">2026<' "$feeds_index"; then
+  echo "feeds list should render a 2026 year heading"
+  exit 1
+fi
+
+if ! grep -q 'class="feed-year-heading">2023<' "$feeds_index"; then
+  echo "feeds list should render a 2023 year heading"
+  exit 1
+fi
+
+year_2026_line="$(grep -n 'class="feed-year-heading">2026<' "$feeds_index" | head -n 1 | cut -d: -f1)"
+year_2023_line="$(grep -n 'class="feed-year-heading">2023<' "$feeds_index" | head -n 1 | cut -d: -f1)"
+if [ "$year_2026_line" -ge "$year_2023_line" ]; then
+  echo "feeds list should order year groups newest first"
   exit 1
 fi
 

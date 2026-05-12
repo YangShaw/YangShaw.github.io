@@ -27,7 +27,6 @@ mkdir -p "$site_dir/content/feeds"
   printf "title = '%s'\n" "$file_stamp"
   printf "%s\n" "description = ''"
   printf "%s\n" "author = 'YangShaw'"
-  printf "%s\n" "tags = ['home']"
   printf "%s\n" "categories = ['home']"
   printf "%s\n\n" "+++"
   if [ -n "$body" ]; then
