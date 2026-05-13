@@ -8,6 +8,11 @@ if [ "${1:-}" = "new-home" ]; then
   exec "$repo_dir/scripts/new-home.sh" "$@"
 fi
 
+if [ "${1:-}" = "new-feed" ]; then
+  shift
+  exec "$repo_dir/scripts/new-feed.sh" "$@"
+fi
+
 if [ -n "${HUGO_BIN:-}" ]; then
   exec "$HUGO_BIN" "$@"
 fi
